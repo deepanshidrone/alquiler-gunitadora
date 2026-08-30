@@ -12,9 +12,16 @@ Rediseño del sitio del cliente (alquilergunitadora.com), en HTML/CSS/JS plano, 
 - `gracias.html` — Página de agradecimiento tras enviar el formulario
 - `styles.css`, `script.js` — estilos y JS compartidos (nav móvil, animaciones ligeras)
 
+## Marca
+
+- **Logo**: `images/logo-fondotrans.png` (original) → recortado a `images/logo-tight.png` (sin margen transparente, usado en el header) y a favicons `images/favicon-{16,32,180,512}.png`.
+- **Colores**: Azul Industrial `#004080`, Naranja Maquinaria `#E67300`, Gris Neutro `#A0A0A0` — definidos como variables CSS en `styles.css` (`--navy`, `--accent`, `--grey`, etc.).
+- **Tipografía**: "Big Shoulders" (slab serif angular, títulos) + "Inter" (texto), vía Google Fonts.
+- **Foto de flota**: `images/maquinas2.jpeg` tenía una franja negra (artefacto de panorámica) en la esquina superior — se recortó a `images/flota-maquinas.jpg` y se usa como banner en `index.html`. El resto de imágenes originales de la carpeta (`alain.jpeg`, `gunite.jpeg`, `maquinas.jpeg`, variantes de logo) no se usan en el diseño actual.
+
 ## Pendiente antes de publicar
 
-1. **Imágenes reales**: descargar del panel de IONOS (logo, fotos de obras, foto de portada) y sustituir en `images/` y las referencias en `index.html` (`images/hero-gunitadora.jpg`) y `galeria.html` (los bloques `.ph` de ejemplo).
+1. **Más fotos reales para la galería**: `galeria.html` sigue con 6 placeholders (`.ph`) — sustituir por fotos de obras cuando el cliente las pase.
 2. **Contenido de servicios**: la lista actual en `servicios.html` es una propuesta razonable a partir del sector; confirmar con el cliente si hay servicios/precios concretos a añadir o quitar.
 3. **Dirección física**: no se encontró en el sitio actual (probablemente solo en un mapa embebido) — pedir al cliente y añadirla en `contacto.html` y el footer.
 4. **Redes sociales**: si el cliente tiene, añadir enlaces en el footer.

@@ -1,18 +1,25 @@
-/* Alquiler Gunitadora — estilos base */
+/* Alquiler Gunitadora — estilos base
+   Paleta: Azul Industrial #004080, Naranja Maquinaria #E67300, Gris Neutro #A0A0A0 */
 
 :root {
-  --dark: #1c2024;
-  --dark-2: #262b30;
-  --accent: #ff7a1a;
-  --accent-dark: #e0620a;
-  --bg: #f6f4f1;
+  --navy: #004080;
+  --navy-light: #0f5aa8;
+  --navy-deep: #001f3f;
+  --accent: #E67300;
+  --accent-dark: #c25f00;
+  --grey: #A0A0A0;
+  --bg: #f4f5f6;
   --bg-card: #ffffff;
-  --text: #2a2e32;
-  --text-muted: #6b7076;
-  --border: #e4e1db;
+  --text: #1b232c;
+  --text-muted: #5b6167;
+  --border: rgba(160, 160, 160, 0.35);
   --radius: 10px;
   --max-width: 1140px;
-  --shadow: 0 8px 24px rgba(28, 32, 36, 0.08);
+  --shadow: 0 8px 24px rgba(0, 64, 128, 0.10);
+
+  /* alias de compatibilidad interna */
+  --dark: var(--navy);
+  --dark-2: var(--navy-light);
 }
 
 * { box-sizing: border-box; }
@@ -29,13 +36,13 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Barlow Condensed", "Inter", sans-serif;
+  font-family: "Big Shoulders", "Inter", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.15;
   margin: 0 0 0.5em;
-  color: var(--dark);
+  color: var(--navy);
 }
 
 h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
@@ -57,7 +64,7 @@ img { max-width: 100%; display: block; }
 
 .section { padding: 72px 0; }
 .section--tight { padding: 48px 0; }
-.section--dark { background: var(--dark); color: #fff; }
+.section--dark { background: var(--navy); color: #fff; }
 .section--dark h2, .section--dark h3, .section--dark p { color: #fff; }
 .section--alt { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -95,8 +102,8 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 
-.btn--primary { background: var(--accent); color: #1c2024; }
-.btn--primary:hover { background: var(--accent-dark); }
+.btn--primary { background: var(--accent); color: #1b232c; }
+.btn--primary:hover { background: var(--accent-dark); color: #fff; }
 
 .btn--outline { background: transparent; border-color: currentColor; color: inherit; }
 .btn--outline:hover { background: rgba(255,255,255,0.08); }
@@ -105,8 +112,8 @@ img { max-width: 100%; display: block; }
 
 /* Header / navegación */
 .top-bar {
-  background: var(--dark);
-  color: #cfd3d6;
+  background: var(--navy-deep);
+  color: #cfd8e2;
   font-size: 0.85rem;
 }
 .top-bar .container {
@@ -125,7 +132,7 @@ header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 244, 241, 0.96);
+  background: rgba(244, 245, 246, 0.96);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
 }
@@ -134,34 +141,16 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 10px 0;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.15rem;
-  color: var(--dark);
-  letter-spacing: 0.01em;
-}
+.brand { display: flex; align-items: center; }
 .brand:hover { text-decoration: none; }
-.brand .brand__mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1c2024;
-  font-weight: 800;
-  font-size: 1rem;
+.brand__logo {
+  height: 56px;
+  width: auto;
+  display: block;
 }
-.brand small { display: block; font-size: 0.55rem; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
 
 .nav__links {
   display: flex;
@@ -188,7 +177,7 @@ header.site-header {
   background: none;
   font-size: 1.6rem;
   cursor: pointer;
-  color: var(--dark);
+  color: var(--navy);
 }
 
 @media (max-width: 860px) {
@@ -210,6 +199,7 @@ header.site-header {
   .nav__links li { width: 100%; }
   .nav__links a { display: block; padding: 14px 24px; width: 100%; }
   .nav__toggle { display: block; }
+  .brand__logo { height: 46px; }
 }
 
 @media (max-width: 480px) {
@@ -220,12 +210,12 @@ header.site-header {
 /* Hero */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, rgba(28,32,36,0.78), rgba(28,32,36,0.86)), url("images/hero-gunitadora.jpg") center/cover no-repeat;
+  background: linear-gradient(160deg, var(--navy-deep), var(--navy) 70%);
   color: #fff;
   padding: 110px 0 90px;
 }
 .hero h1 { color: #fff; }
-.hero .lead { color: #d8dadc; }
+.hero .lead { color: #d8e0e8; }
 .hero__badges {
   display: flex;
   gap: 12px;
@@ -242,12 +232,44 @@ header.site-header {
 }
 
 .page-hero {
-  background: var(--dark);
+  background: var(--navy);
   color: #fff;
   padding: 64px 0;
 }
 .page-hero h1 { color: #fff; margin-bottom: 0.2em; }
-.page-hero p { color: #c7cace; margin: 0; }
+.page-hero p { color: #d8e0e8; margin: 0; }
+
+/* Banner de flota (foto real de máquinas) */
+.fleet-banner {
+  position: relative;
+  overflow: hidden;
+}
+.fleet-banner img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 65%;
+}
+.fleet-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,31,63,0.05) 40%, rgba(0,31,63,0.75));
+}
+.fleet-banner__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 24px;
+}
+.fleet-banner__caption .eyebrow { color: #ffcf9e; margin-bottom: 0.2em; }
+.fleet-banner__caption h3 { color: #fff; margin: 0; }
+@media (max-width: 700px) {
+  .fleet-banner img { height: 220px; }
+}
 
 /* Grids */
 .grid {
@@ -271,7 +293,7 @@ header.site-header {
   width: 48px;
   height: 48px;
   border-radius: 10px;
-  background: rgba(255,122,26,0.12);
+  background: rgba(230, 115, 0, 0.12);
   color: var(--accent-dark);
   display: flex;
   align-items: center;
@@ -288,7 +310,7 @@ header.site-header {
 }
 .stats strong {
   display: block;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Big Shoulders", sans-serif;
   font-size: 2.4rem;
   color: var(--accent);
 }
@@ -310,8 +332,8 @@ header.site-header {
   height: 100%;
 }
 .ph {
-  background: linear-gradient(135deg, #2a2e32, #1c2024);
-  color: #8b9096;
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-deep));
+  color: #cdd9e6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -356,7 +378,7 @@ form.contact-form {
 .field--check { display: flex; align-items: center; gap: 8px; flex-direction: row; }
 
 .contact-info-card {
-  background: var(--dark);
+  background: var(--navy);
   color: #fff;
   border-radius: var(--radius);
   padding: 32px;
@@ -368,8 +390,8 @@ form.contact-form {
 
 /* Footer */
 footer.site-footer {
-  background: var(--dark);
-  color: #b9bdc1;
+  background: var(--navy-deep);
+  color: #c3ccd6;
   padding: 48px 0 24px;
 }
 .footer-grid {
@@ -382,10 +404,11 @@ footer.site-footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 footer.site-footer h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.8em; }
-footer.site-footer a { color: #b9bdc1; }
+footer.site-footer p { color: #c3ccd6; }
+footer.site-footer a { color: #c3ccd6; }
 footer.site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 20px;
   font-size: 0.8rem;
   display: flex;
