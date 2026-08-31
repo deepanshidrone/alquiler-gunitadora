@@ -147,7 +147,7 @@ header.site-header {
 .brand { display: flex; align-items: center; }
 .brand:hover { text-decoration: none; }
 .brand__logo {
-  height: 56px;
+  height: 84px;
   width: auto;
   display: block;
 }
@@ -199,7 +199,7 @@ header.site-header {
   .nav__links li { width: 100%; }
   .nav__links a { display: block; padding: 14px 24px; width: 100%; }
   .nav__toggle { display: block; }
-  .brand__logo { height: 46px; }
+  .brand__logo { height: 69px; }
 }
 
 @media (max-width: 480px) {
