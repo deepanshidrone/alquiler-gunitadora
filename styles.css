@@ -144,17 +144,27 @@ header.site-header {
   padding: 10px 0;
 }
 
-.brand { display: flex; align-items: center; }
+.brand { display: flex; align-items: center; gap: 10px; }
 .brand:hover { text-decoration: none; }
 .brand__logo {
   height: 84px;
   width: auto;
   display: block;
+  flex-shrink: 0;
+}
+.brand__name {
+  font-family: "Big Shoulders", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .nav__links {
   display: flex;
-  gap: 28px;
+  gap: 22px;
   align-items: center;
   list-style: none;
   margin: 0;
@@ -163,9 +173,9 @@ header.site-header {
 .nav__links a {
   color: var(--text);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 .nav__links a:hover, .nav__links a.active { color: var(--accent-dark); text-decoration: none; }
 
@@ -180,7 +190,9 @@ header.site-header {
   color: var(--navy);
 }
 
-@media (max-width: 860px) {
+.site-header .nav.container { max-width: 1200px; }
+
+@media (max-width: 1140px) {
   .nav__links {
     position: absolute;
     top: 100%;
@@ -197,9 +209,10 @@ header.site-header {
   }
   .nav__links.is-open { max-height: 420px; }
   .nav__links li { width: 100%; }
-  .nav__links a { display: block; padding: 14px 24px; width: 100%; }
+  .nav__links a { display: block; padding: 14px 24px; width: 100%; font-size: 0.92rem; }
   .nav__toggle { display: block; }
   .brand__logo { height: 69px; }
+  .brand__name { font-size: 1.05rem; }
 }
 
 @media (max-width: 480px) {
