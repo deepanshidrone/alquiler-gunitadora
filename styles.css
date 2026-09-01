@@ -36,7 +36,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Big Shoulders", "Inter", sans-serif;
+  font-family: "Zilla Slab", "Inter", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -153,7 +153,7 @@ header.site-header {
   flex-shrink: 0;
 }
 .brand__name {
-  font-family: "Big Shoulders", sans-serif;
+  font-family: "Zilla Slab", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
@@ -211,8 +211,14 @@ header.site-header {
   .nav__links li { width: 100%; }
   .nav__links a { display: block; padding: 14px 24px; width: 100%; font-size: 0.92rem; }
   .nav__toggle { display: block; }
+  .brand { min-width: 0; flex: 1 1 auto; overflow: hidden; margin-right: 8px; }
   .brand__logo { height: 69px; }
-  .brand__name { font-size: 1.05rem; }
+  .brand__name {
+    font-size: 0.95rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media (max-width: 480px) {
@@ -349,7 +355,7 @@ header.site-header {
 }
 .stats strong {
   display: block;
-  font-family: "Big Shoulders", sans-serif;
+  font-family: "Zilla Slab", sans-serif;
   font-size: 2.4rem;
   color: var(--accent);
 }
